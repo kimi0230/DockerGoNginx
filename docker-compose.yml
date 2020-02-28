@@ -1,0 +1,17 @@
+version: '3'
+services:
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile.dev
+    restart: always
+    ports: 
+      - '3050:80'
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /go/src/DockerGoNginx/api/vendor
+      - ./api:/go/src/DockerGoNginx/api
+    restart: always

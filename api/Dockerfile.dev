@@ -1,0 +1,11 @@
+FROM golang:alpine
+
+WORKDIR '/go/src/DockerGoNginx/api'
+COPY . .
+RUN apk add git
+RUN go get -u github.com/kardianos/govendor
+# RUN govendor migrate
+# RUN govendor init
+RUN govendor sync
+
+CMD ["go","run","main.go","dev"]
