@@ -1,12 +1,17 @@
 version: '3'
 services:
-  nginx:
-    build:
-      context: ./nginx
-      dockerfile: Dockerfile.dev
+  mysql:
+    image: mysql:5.7.29
     restart: always
-    ports: 
-      - '3050:80'
+    ports:
+      - 3306:3306
+    env_file:
+      - .env.dev
+    environment:
+      MYSQL_DATABASE:
+      MYSQL_USER:
+      MYSQL_PASSWORD:
+      MYSQL_ROOT_PASSWORD:
   api:
     build:
       context: ./api
@@ -15,3 +20,14 @@ services:
       - /go/src/DockerGoNginx/api/vendor
       - ./api:/go/src/DockerGoNginx/api
     restart: always
+    depends_on:
+      - mysql
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile.dev
+    restart: always
+    depends_on:
+      - api
+    ports: 
+      - '8080:80'

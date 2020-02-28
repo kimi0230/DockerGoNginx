@@ -8,3 +8,5 @@
 /api/.env.dev
 /api/.env.qa
 /api/firebase.json
+.env
+.env.dev
