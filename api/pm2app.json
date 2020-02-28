@@ -1,6 +1,6 @@
 {
     apps: [{
-        name: "DockerGoNginx_APP",
+        name: "DockerGoNginx/api_APP",
         script: "go run main.go app",
         log_date_format: "YYYY-MM-DD HH:mm",
         merge_logs: true,

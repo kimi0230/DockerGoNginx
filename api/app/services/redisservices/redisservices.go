@@ -2,7 +2,7 @@ package redisservices
 
 import (
 	"fmt"
-	"DockerGoNginx/config"
+	"DockerGoNginx/api/config"
 	"time"
 
 	"github.com/gomodule/redigo/redis"

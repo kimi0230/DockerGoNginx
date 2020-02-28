@@ -1,7 +1,7 @@
 package test
 
 import (
-	mathhelper "DockerGoNginx/app/helper/mathHelper"
+	mathhelper "DockerGoNginx/api/app/helper/mathHelper"
 	"testing"
 
 	"github.com/stretchr/testify/assert"

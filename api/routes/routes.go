@@ -1,8 +1,8 @@
 package routes
 
 import (
-	"DockerGoNginx/app/controllers/api/test"
-	"DockerGoNginx/app/middleware/tokenAuth"
+	"DockerGoNginx/api/app/controllers/api/test"
+	"DockerGoNginx/api/app/middleware/tokenAuth"
 	"time"
 
 	_ "github.com/jinzhu/gorm/dialects/mysql"

@@ -3,8 +3,8 @@ package main
 import (
 	"flag"
 	"fmt"
-	"DockerGoNginx/app/models"
-	db "DockerGoNginx/config/databases/mysql"
+	"DockerGoNginx/api/app/models"
+	db "DockerGoNginx/api/config/databases/mysql"
 )
 
 var (

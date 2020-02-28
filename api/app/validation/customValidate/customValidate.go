@@ -1,7 +1,7 @@
 package customValidate
 
 import (
-	"DockerGoNginx/app/validation/validatefunction"
+	"DockerGoNginx/api/app/validation/validatefunction"
 
 	"github.com/gin-gonic/gin/binding"
 	"gopkg.in/go-playground/validator.v8"

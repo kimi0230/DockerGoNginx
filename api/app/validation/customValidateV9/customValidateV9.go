@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"sync"
 
-	"DockerGoNginx/app/validation/validatefunctionV9"
+	"DockerGoNginx/api/app/validation/validatefunctionV9"
 
 	"github.com/gin-gonic/gin/binding"
 	"gopkg.in/go-playground/validator.v9"

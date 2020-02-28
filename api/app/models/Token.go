@@ -1,8 +1,8 @@
 package models
 
 import (
-	config "DockerGoNginx/config"
-	db "DockerGoNginx/config/databases/mysql"
+	config "DockerGoNginx/api/config"
+	db "DockerGoNginx/api/config/databases/mysql"
 	"time"
 
 	"github.com/jinzhu/gorm"

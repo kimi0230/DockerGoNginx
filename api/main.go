@@ -4,14 +4,14 @@ import (
 	"net"
 	"time"
 
-	"DockerGoNginx/app/validation/customValidate"
-	"DockerGoNginx/app/validation/customValidateV9"
-	"DockerGoNginx/config"
-	"DockerGoNginx/routes"
+	"DockerGoNginx/api/app/validation/customValidate"
+	"DockerGoNginx/api/app/validation/customValidateV9"
+	"DockerGoNginx/api/config"
+	"DockerGoNginx/api/routes"
 	"net/http"
 	"os"
 
-	// db "DockerGoNginx/config/databases/mysql"
+	// db "DockerGoNginx/api/config/databases/mysql"
 
 	rotatelogs "github.com/lestrrat/go-file-rotatelogs"
 	"github.com/rifflock/lfshook"

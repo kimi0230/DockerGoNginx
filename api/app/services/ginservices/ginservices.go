@@ -1,8 +1,8 @@
 package ginservices
 
 import (
-	"DockerGoNginx/app/services/commomservices"
-	"DockerGoNginx/config"
+	"DockerGoNginx/api/app/services/commomservices"
+	"DockerGoNginx/api/config"
 	"bytes"
 	"io/ioutil"
 	"net/http"

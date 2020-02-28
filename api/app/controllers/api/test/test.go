@@ -1,8 +1,8 @@
 package test
 
 import (
-	"DockerGoNginx/app/services/ginservices"
-	"DockerGoNginx/config/errorCode"
+	"DockerGoNginx/api/app/services/ginservices"
+	"DockerGoNginx/api/config/errorCode"
 
 	"github.com/gin-gonic/gin"
 )
