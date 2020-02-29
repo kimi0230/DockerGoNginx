@@ -93,7 +93,7 @@ func main() {
 			godotenv.Load("./.env")
 		}
 	} else {
-		godotenv.Load("./.env")
+		// godotenv.Load("./.env")
 	}
 
 	// Listen and Server

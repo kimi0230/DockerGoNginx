@@ -3,6 +3,8 @@ package routes
 import (
 	"DockerGoNginx/api/app/controllers/api/test"
 	"DockerGoNginx/api/app/middleware/tokenAuth"
+	"DockerGoNginx/api/app/services/ginservices"
+	"DockerGoNginx/api/config/errorCode"
 	"time"
 
 	_ "github.com/jinzhu/gorm/dialects/mysql"
@@ -21,13 +23,14 @@ func SetupRouter() *gin.Engine {
 				"msg":  "Hello Kimi!",
 				"time": time.Now().Format("2006-01-02 15:04:05"),
 			},
-			"Result": map[string]interface{}{
-				"Status":  true,
-				"Code":    "2000",
-				"Message": "正確狀況",
-			},
+			// "Result": map[string]interface{}{
+			// 	"Status":  true,
+			// 	"Code":    "2000",
+			// 	"Message": "正確狀況",
+			// },
 		}
-		c.JSON(http.StatusOK, result)
+		ginservices.GinResponse(c, "", result, true, errorCode.SUCCESS, "")
+		// c.JSON(http.StatusOK, result)
 	})
 
 	// 測試檢查 Token

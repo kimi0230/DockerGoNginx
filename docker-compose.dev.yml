@@ -6,7 +6,7 @@ services:
     ports:
       - 3306:3306
     env_file:
-      - ./.mysql_db.env
+      - ./.mysql_db.env.dev
     # environment:
     #   MYSQL_DATABASE:
     #   MYSQL_USER:
@@ -15,14 +15,15 @@ services:
   api:
     build:
       context: ./api
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     volumes:
-      - ./api/logs:/app/logs
+      - /go/src/DockerGoNginx/api/vendor
+      - ./api:/go/src/DockerGoNginx/api
     restart: always
     depends_on:
       - mysql_db
     env_file:
-      - ./api/.env
+      - ./api/.env.dev
     environment:
       DB_CONNECTION: mysql
       DB_HOST: mysql_db
@@ -33,9 +34,9 @@ services:
   nginx:
     build:
       context: ./nginx
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     restart: always
     depends_on:
       - api
     ports: 
-      - '80:80'
+      - '8080:80'
