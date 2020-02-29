@@ -11,7 +11,7 @@ import (
 	"net/http"
 	"os"
 
-	// db "DockerGoNginx/api/config/databases/mysql"
+	db "DockerGoNginx/api/config/databases/mysql"
 
 	rotatelogs "github.com/lestrrat/go-file-rotatelogs"
 	"github.com/rifflock/lfshook"
@@ -64,8 +64,8 @@ func newRotateHook(logPath string, logFileName string, maxAge time.Duration, rot
 }
 
 func main() {
-	// defer db.GormDB.Close()
-	// defer db.SqlDB.Close()
+	defer db.GormDB.Close()
+	defer db.SqlDB.Close()
 
 	// GIN binding validation version
 	switch config.VALIDATION_VERSION {
